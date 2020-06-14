@@ -1,16 +1,8 @@
+
+
 body{
     background-color: rgb(46, 103, 105);
     text-align: center;
-}
-    h1{
-    background-color: aquamarine;
-    color: rgb(37, 44, 150);
-    text-align: center;
-    border-radius: 50%;
-}
-a{
-        font-size: 25px;    
-       
 }
 button{
     border-radius: 50%;
@@ -22,17 +14,8 @@ button{
     text-decoration: none;
     text-align: left;
 }
-   
-
-p{
-    font-size: 25px;
-    background-color: rgb(50, 199, 204);
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-}
 img {
-    width: 100px;
-    margin-bottom: 0mm;
+    width: 200px;
+    height:200px;
+    margin: 2px 0;
 }

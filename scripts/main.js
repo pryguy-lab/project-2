@@ -1,0 +1,55 @@
+// UsdCKB1nUtVDwQyEJ7iVO0mJyGOYJJBw
+    const searchForm = document.getElementById("search-form")
+    const searchInput = document.getElementById("search-input")
+    const resultsEl = document.getElementById('results')
+
+    searchForm.addEventListener("submit",function(e){
+        e.preventDefault(true)
+        const q = searchInput.value
+        search(q)
+
+})
+
+    function search(q){
+        const apikey = 'UsdCKB1nUtVDwQyEJ7iVO0mJyGOYJJBw'
+        const path =  `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${q}`
+
+    fetch(path).then(function(res){
+        return res.json()
+
+    }).then(function(json){
+    
+        console.log(json.data[0].images.fixed_width.url)        
+        let resultsHTML = ''
+
+    json.data.forEach(function(obj){
+        console.log(obj.images.fixed_width.url)
+        const url = obj.images.fixed_width.url
+        const width = obj.images.fixed_width.width
+        const height = obj.images.fixed_width.height
+        const title = obj.title
+        resultsHTML += `<img
+        class="item"
+        src="${url}"
+        width="${width}"
+        height="${height}"
+        alt="${title}">`
+    })
+    resultsEl.innerHTML = resultsHTML 
+})  .catch(function(err){
+        console.log(err.message)
+
+})
+
+}
+
+
+
+// const p = fetch(path)
+// const p2 =p.then(function(res){
+//     return res.json()
+
+// })
+// p2.then(function(json){
+//     console.log(json)
+// })
