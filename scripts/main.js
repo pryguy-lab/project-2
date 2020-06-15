@@ -2,13 +2,13 @@
     const searchForm = document.getElementById("search-form")
     const searchInput = document.getElementById("search-input")
     const resultsEl = document.getElementById('results')
-
+    
     searchForm.addEventListener("submit",function(e){
-        e.preventDefault(true)
+        e.preventDefault()
         const q = searchInput.value
         search(q)
+    })
 
-})
 
     function search(q){
         const apikey = 'UsdCKB1nUtVDwQyEJ7iVO0mJyGOYJJBw'
@@ -44,12 +44,3 @@
 }
 
 
-
-// const p = fetch(path)
-// const p2 =p.then(function(res){
-//     return res.json()
-
-// })
-// p2.then(function(json){
-//     console.log(json)
-// })
